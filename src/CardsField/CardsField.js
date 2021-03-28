@@ -5,7 +5,6 @@ import Card from "../Card";
 const CardsField = () => {
 	return (
 		<div>
-			<h2>CardsField</h2>
 			<Card />
 			<Card />
 			<Card />
