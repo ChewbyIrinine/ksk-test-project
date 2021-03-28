@@ -1,16 +1,20 @@
-.app {
-	display: grid;
-	grid-auto-rows: 261px 1fr 1fr 111px;
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas:
-		"header header"
-		"filters sorting"
-		"filters cards-field"
-		"footer footer";
+.header {
+	height: 261px;
+	background: linear-gradient(
+		267.21deg,
+		#900793 0.16%,
+		rgba(134, 4, 137, 0.785707) 0.16%,
+		rgba(159, 12, 162, 0.762269) 43.22%,
+		rgba(5, 1, 190, 0.734375) 98.12%,
+		rgba(0, 28, 126, 0.619792) 100.15%,
+		rgba(6, 77, 142, 0.447917) 102.03%,
+		rgba(1, 0, 60, 0) 102.73%
+	);
 }
 
-.header {
-	grid-area: header;
+.header__label {
+	padding-left: calc(50% - 720px);
+	padding-right: calc(50% - 720px);
 }
 
 .filters {
@@ -27,4 +31,15 @@
 
 .footer {
 	grid-area: footer;
+}
+
+.central-content {
+	display: grid;
+	grid-auto-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"filters sorting"
+		"filters cards-field";
+	padding-left: calc(50% - 720px);
+	padding-right: calc(50% - 720px);
 }
