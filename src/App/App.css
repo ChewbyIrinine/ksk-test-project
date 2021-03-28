@@ -1,0 +1,30 @@
+.app {
+	display: grid;
+	grid-auto-rows: 261px 1fr 1fr 111px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"header header"
+		"filters sorting"
+		"filters cards-field"
+		"footer footer";
+}
+
+.header {
+	grid-area: header;
+}
+
+.filters {
+	grid-area: filters;
+}
+
+.sorting {
+	grid-area: sorting;
+}
+
+.cards-field {
+	grid-area: cards-field;
+}
+
+.footer {
+	grid-area: footer;
+}

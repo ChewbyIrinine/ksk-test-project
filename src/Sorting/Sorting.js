@@ -4,7 +4,7 @@ const Sorting = () => {
 	return (
 		<div>
 			<select>
-				<option disabled selected style={{ display: "none" }}>
+				<option disabled defaultValue style={{ display: "none" }}>
 					Sorting
 				</option>
 				<option>Sort by ID: ascending</option>
@@ -18,7 +18,7 @@ const Sorting = () => {
 				<input type="checkbox" />
 				Enable drag and drop
 			</label>
-            <button>Add</button>
+			<button>Add</button>
 		</div>
 	);
 };
