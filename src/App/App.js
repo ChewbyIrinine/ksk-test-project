@@ -27,9 +27,7 @@ export default class App extends React.Component {
 						</button>
 						<Filters />
 						<Sorting />
-						<div className="cards-field">
-							<CardsField />
-						</div>
+						<CardsField />
 					</div>
 				</div>
 				<footer className="footer"></footer>

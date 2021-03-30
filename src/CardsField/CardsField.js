@@ -1,10 +1,13 @@
 import React from "react";
 
+import "./CardsField.css";
 import Card from "../Card";
 
 const CardsField = () => {
 	return (
-		<div>
+		<div className="cards-field">
+			<Card />
+			<Card />
 			<Card />
 			<Card />
 			<Card />
