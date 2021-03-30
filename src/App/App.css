@@ -1,4 +1,4 @@
-.text {
+.app-text {
 	margin: 0;
 	font-family: "Roboto", sans-serif;
 	font-style: normal;
@@ -29,7 +29,7 @@
 	position: absolute;
 	top: 106px;
 	left: 110px;
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 36px;
 	line-height: 42px;
 	color: white;
@@ -58,13 +58,20 @@
 	grid-area: footer;
 }
 
-.central-content {
+.content {
+	background-color: white;
+	padding-left: calc(50% - 720px);
+	padding-right: calc(50% - 720px);
+	background-color: white;
+}
+
+.content__center {
 	display: grid;
 	grid-auto-rows: 1fr 1fr;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: min-content 1fr;
 	grid-template-areas:
 		"filters sorting"
 		"filters cards-field";
-	padding-left: calc(50% - 720px);
-	padding-right: calc(50% - 720px);
+	background-color: #e5e5e5;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

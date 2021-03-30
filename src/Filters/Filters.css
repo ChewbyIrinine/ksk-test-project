@@ -1,0 +1,72 @@
+.filters {
+	height: 330px;
+	width: 280px;
+	background-color: white;
+	margin-top: 29px;
+	margin-left: 120px;
+	margin-right: 20px;
+}
+
+.filters-text {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+}
+
+.filters__heading {
+	padding-top: 15px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #f8f8f8;
+}
+
+.filters__heading-label {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 19px;
+	color: #2b2839;
+	margin-left: 38px;
+}
+
+.filters__content {
+	padding: 17px 30px 0;
+}
+
+.filters__content-label {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 16px;
+	color: #2b2839;
+}
+
+.filters__input {
+	box-sizing: border-box;
+	width: 100%;
+	margin-top: 11px;
+	margin-bottom: 17px;
+}
+
+.filters__date {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 11px;
+    margin-bottom: 17px;
+}
+
+.filters__content-label--date {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 14px;
+	color: #000000;
+}
+
+.filters__date-input {
+	height: 24px;
+	width: 82px;
+}
+
+.filters__select {
+	width: 100%;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}

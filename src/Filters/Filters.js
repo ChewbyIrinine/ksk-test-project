@@ -1,24 +1,52 @@
 import React from "react";
 
+import "./Filters.css";
+
 const Filters = () => {
 	return (
-		<div>
-			<h2>Filters</h2>
-			<label>ID</label>
-			<input type="text" placeholder="Enter value"></input>
-			<label>Invoice number</label>
-			<input type="text" placeholder="Enter value"></input>
-			<label>Time of arrival for unloading</label>
-			<label>from</label>
-			<input type="date"></input>
-			<label>by</label>
-			<input type="date"></input>
-			<label>Order type</label>
-			<select>
-				<option>RUED</option>
-				<option>RUEX</option>
-				<option>RUSG</option>
-			</select>
+		<div className="filters">
+			<div className="filters__heading">
+				<h2 className="filters-text filters__heading-label">Filters</h2>
+			</div>
+			<div className="filters__content">
+				<label className="filters-text filters__content-label">
+					ID
+				</label>
+				<input
+					className="filters__input"
+					type="text"
+					placeholder="Enter value"
+				></input>
+				<label className="filters-text filters__content-label">
+					Invoice number
+				</label>
+				<input
+					className="filters__input"
+					type="text"
+					placeholder="Enter value"
+				></input>
+				<label className="filters-text filters__content-label">
+					Time of arrival for unloading
+				</label>
+				<div className="filters__date">
+					<label className="filters-text filters__content-label--date">
+						from
+					</label>
+					<input className="filters__date-input" type="date"></input>
+					<label className="filters-text filters__content-label--date">
+						by
+					</label>
+					<input className="filters__date-input" type="date"></input>
+				</div>
+				<label className="filters-text filters__content-label">
+					Order type
+				</label>
+				<select className="filters__select">
+					<option>RUED</option>
+					<option>RUEX</option>
+					<option>RUSG</option>
+				</select>
+			</div>
 		</div>
 	);
 };
