@@ -61,7 +61,8 @@
 	color: #000000;
 }
 
-.filters__date-input {
+.filters__date-input--from,
+.filters__date-input--by {
 	height: 24px;
 	width: 82px;
 }

@@ -32,11 +32,11 @@ const Filters = () => {
 					<label className="filters-text filters__content-label--date">
 						from
 					</label>
-					<input className="filters__date-input" type="date"></input>
+					<input className="filters__date-input--from" type="date"></input>
 					<label className="filters-text filters__content-label--date">
 						by
 					</label>
-					<input className="filters__date-input" type="date"></input>
+					<input className="filters__date-input--by" type="date"></input>
 				</div>
 				<label className="filters-text filters__content-label">
 					Order type
