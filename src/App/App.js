@@ -22,6 +22,9 @@ export default class App extends React.Component {
 				</header>
 				<div className="content">
 					<div className="content__center">
+						<button className="app-text add-button">
+							ДОБАВИТЬ
+						</button>
 						<Filters />
 						<Sorting />
 						<div className="cards-field">

@@ -42,6 +42,22 @@
 	right: 120px;
 }
 
+.add-button {
+	grid-area: add-button;
+	margin-top: 30px;
+	margin-left: 120px;
+	margin-right: 20px;
+	background: #4943cd;
+	box-shadow: 0px 4px 4px #ebebeb;
+	border-radius: 2px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	color: #ffffff;
+	border: 0;
+	padding: 0;
+}
+
 .filters {
 	grid-area: filters;
 }
@@ -67,10 +83,10 @@
 
 .content__center {
 	display: grid;
-	grid-auto-rows: 1fr 1fr;
+	grid-auto-rows: min-content 1fr;
 	grid-template-columns: min-content 1fr;
 	grid-template-areas:
-		"filters sorting"
+		"add-button sorting"
 		"filters cards-field";
 	background-color: #f8f8f8;
 	box-shadow: 0px 4px 12px #e7e7e7;
@@ -78,7 +94,7 @@
 }
 
 .footer {
-	height: 96px;
+	height: 111px;
 	background: linear-gradient(
 		267.21deg,
 		#900793 0.16%,
