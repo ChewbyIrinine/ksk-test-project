@@ -23,9 +23,7 @@ export default class App extends React.Component {
 				<div className="content">
 					<div className="content__center">
 						<Filters />
-						<div className="sorting">
-							<Sorting />
-						</div>
+						<Sorting />
 						<div className="cards-field">
 							<CardsField />
 						</div>

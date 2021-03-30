@@ -1,10 +1,12 @@
 import React from "react";
 
+import "./Sorting.css";
+
 const Sorting = () => {
 	return (
-		<div>
-			<select>
-				<option disabled defaultValue style={{ display: "none" }}>
+		<div className="sorting">
+			<select className="sorting__select" defaultValue="default">
+				<option disabled value="default" style={{ display: "none" }}>
 					Sorting
 				</option>
 				<option>Sort by ID: ascending</option>
@@ -14,11 +16,10 @@ const Sorting = () => {
 				<option>Sort by Order type: ascending</option>
 				<option>Sort by Order type: descending</option>
 			</select>
-			<label>
-				<input type="checkbox" />
+			<label className="sorting__label">
+				<input className="sorting__checkbox" type="checkbox" />
 				Enable drag and drop
 			</label>
-			<button>Add</button>
 		</div>
 	);
 };
