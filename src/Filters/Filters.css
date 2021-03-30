@@ -5,6 +5,7 @@
 	margin-top: 29px;
 	margin-left: 120px;
 	margin-right: 20px;
+	box-shadow: 0px 4px 12px #e7e7e7;
 }
 
 .filters-text {
@@ -50,7 +51,7 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 11px;
-    margin-bottom: 17px;
+	margin-bottom: 17px;
 }
 
 .filters__content-label--date {
@@ -67,6 +68,6 @@
 
 .filters__select {
 	width: 100%;
-    margin-top: 8px;
-    margin-bottom: 20px;
+	margin-top: 8px;
+	margin-bottom: 20px;
 }

@@ -3,7 +3,6 @@ import React from "react";
 import Filters from "../Filters";
 import Sorting from "../Sorting";
 import CardsField from "../CardsField";
-import Footer from "../Footer";
 
 import "./App.css";
 
@@ -32,9 +31,7 @@ export default class App extends React.Component {
 						</div>
 					</div>
 				</div>
-				<div className="footer">
-					<Footer />
-				</div>
+				<footer className="footer"></footer>
 			</div>
 		);
 	}
