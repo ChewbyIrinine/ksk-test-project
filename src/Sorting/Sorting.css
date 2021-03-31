@@ -25,6 +25,7 @@
 }
 
 .sorting__checkbox {
+	margin-top: 0;
 	margin-left: 21px;
 	margin-right: 10px;
 }

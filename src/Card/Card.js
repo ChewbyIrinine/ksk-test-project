@@ -11,7 +11,7 @@ const Card = ({
 	type,
 }) => {
 	return (
-		<div className="card">
+		<div className="card-item">
 			<div className="card__heading">
 				<h2 className="card__title">Card 1</h2>
 			</div>

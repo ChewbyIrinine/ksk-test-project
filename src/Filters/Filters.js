@@ -13,7 +13,7 @@ const Filters = () => {
 					ID
 				</label>
 				<input
-					className="filters__input"
+					className="form-control filters__input"
 					type="text"
 					placeholder="Enter value"
 				></input>
@@ -21,7 +21,7 @@ const Filters = () => {
 					Invoice number
 				</label>
 				<input
-					className="filters__input"
+					className="form-control filters__input"
 					type="text"
 					placeholder="Enter value"
 				></input>
@@ -32,16 +32,22 @@ const Filters = () => {
 					<label className="filters-text filters__content-label--date">
 						from
 					</label>
-					<input className="filters__date-input--from" type="date"></input>
+					<input
+						className="form-control filters__date-input--from"
+						type="date"
+					></input>
 					<label className="filters-text filters__content-label--date">
 						by
 					</label>
-					<input className="filters__date-input--by" type="date"></input>
+					<input
+						className="form-control filters__date-input--by"
+						type="date"
+					></input>
 				</div>
 				<label className="filters-text filters__content-label">
 					Order type
 				</label>
-				<select className="filters__select">
+				<select className="form-select filters__select">
 					<option>RUED</option>
 					<option>RUEX</option>
 					<option>RUSG</option>

@@ -5,7 +5,10 @@ import "./Sorting.css";
 const Sorting = () => {
 	return (
 		<div className="sorting">
-			<select className="sorting__select" defaultValue="default">
+			<select
+				className="form-select sorting__select"
+				defaultValue="default"
+			>
 				<option disabled value="default" style={{ display: "none" }}>
 					Sorting
 				</option>
@@ -17,7 +20,10 @@ const Sorting = () => {
 				<option>Sort by Order type: descending</option>
 			</select>
 			<label className="sorting__label">
-				<input className="sorting__checkbox" type="checkbox" />
+				<input
+					className="form-check-input sorting__checkbox"
+					type="checkbox"
+				/>
 				Enable drag and drop
 			</label>
 		</div>

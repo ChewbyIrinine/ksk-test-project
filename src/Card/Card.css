@@ -1,6 +1,6 @@
-.card {
-	margin-top: 20px;
+.card-item {
 	margin-right: 20px;
+	margin-bottom: 20px;
 	position: relative;
 	width: max-content;
 }
@@ -27,8 +27,8 @@
 
 .card__content {
 	margin-top: -40px;
-	height: 163px;
-	width: 250px;
+	height: 210px;
+	width: 290px;
 	background-color: #f6fafb;
 	border-radius: 3px;
 	box-shadow: 0px 4px 12px #ebebeb;
@@ -53,4 +53,5 @@
 	width: 100%;
 	background-color: #f2f2f2;
 	height: 1px;
+	opacity: 1;
 }

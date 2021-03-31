@@ -1,5 +1,5 @@
 .filters {
-	height: 330px;
+	height: min-content;
 	width: 280px;
 	background-color: white;
 	margin-top: 20px;
@@ -41,6 +41,7 @@
 
 .filters__input {
 	box-sizing: border-box;
+	height: 30px;
 	width: 100%;
 	margin-top: 11px;
 	margin-bottom: 17px;
@@ -68,6 +69,7 @@
 }
 
 .filters__select {
+	height: 30px;
 	width: 100%;
 	margin-top: 8px;
 	margin-bottom: 20px;
