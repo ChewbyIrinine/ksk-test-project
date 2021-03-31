@@ -3,6 +3,7 @@ import React from "react";
 import Filters from "../Filters";
 import Sorting from "../Sorting";
 import CardsField from "../CardsField";
+import AddForm from "../AddForm";
 
 import "./App.css";
 
@@ -58,6 +59,8 @@ export default class App extends React.Component {
 		filterArrivalFrom: "",
 		filterArrivalBy: "",
 		filterType: "default",
+
+		modalActive: false,
 	};
 
 	filter(
@@ -114,6 +117,12 @@ export default class App extends React.Component {
 		console.log("Изменение фильтра");
 	};
 
+	onModalOff = () => {
+		this.setState({
+			modalActive: false,
+		});
+	};
+
 	render() {
 		const {
 			items,
@@ -122,6 +131,7 @@ export default class App extends React.Component {
 			filterArrivalFrom,
 			filterArrivalBy,
 			filterType,
+			modalActive,
 		} = this.state;
 
 		const visibleItems = this.filter(
@@ -132,6 +142,14 @@ export default class App extends React.Component {
 			filterArrivalBy,
 			filterType
 		);
+
+		document.onkeydown = (event) => {
+			if (event.key === "Enter") {
+				this.onModalOff();
+				document.querySelector(".add-form__select").blur();
+				console.log("enter press here! ");
+			}
+		};
 
 		return (
 			<div className="app">
@@ -147,12 +165,9 @@ export default class App extends React.Component {
 					<div className="content__center">
 						<button
 							className="btn btn-light app-text add-button"
+							type="button"
 							onClick={() => {
-								console.log(
-									document.querySelector(
-										".filters__date-input--from"
-									).value
-								);
+								this.setState({ modalActive: true });
 							}}
 						>
 							ДОБАВИТЬ
@@ -170,6 +185,10 @@ export default class App extends React.Component {
 					</div>
 				</div>
 				<footer className="footer"></footer>
+				<AddForm
+					modalActive={modalActive}
+					onModalOff={this.onModalOff}
+				/>
 			</div>
 		);
 	}
