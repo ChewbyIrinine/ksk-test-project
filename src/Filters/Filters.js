@@ -5,6 +5,8 @@ import "./Filters.css";
 export default class Filters extends React.Component {
 	render() {
 		const {
+			filterId,
+			filterInvoiceNumber,
 			filterArrivalFrom,
 			filterArrivalBy,
 			onFilterChange,
@@ -25,14 +27,32 @@ export default class Filters extends React.Component {
 						className="form-control filters__input"
 						type="text"
 						placeholder="Enter value"
+						value={filterId}
+						onChange={(event) =>
+							onFilterChange(
+								event.target.value,
+								filterInvoiceNumber,
+								filterArrivalFrom,
+								filterArrivalBy
+							)
+						}
 					></input>
 					<label className="filters-text filters__content-label">
 						Invoice number
 					</label>
 					<input
 						className="form-control filters__input"
-						type="text"
+						type="number"
 						placeholder="Enter value"
+						value={filterInvoiceNumber}
+						onChange={(event) =>
+							onFilterChange(
+								filterId,
+								event.target.value,
+								filterArrivalFrom,
+								filterArrivalBy
+							)
+						}
 					></input>
 					<label className="filters-text filters__content-label">
 						Time of arrival for unloading
@@ -47,6 +67,8 @@ export default class Filters extends React.Component {
 							value={filterArrivalFrom}
 							onChange={(event) =>
 								onFilterChange(
+									filterId,
+									filterInvoiceNumber,
 									event.target.value,
 									filterArrivalBy
 								)
@@ -61,6 +83,8 @@ export default class Filters extends React.Component {
 							value={filterArrivalBy}
 							onChange={(event) =>
 								onFilterChange(
+									filterId,
+									filterInvoiceNumber,
 									filterArrivalFrom,
 									event.target.value
 								)

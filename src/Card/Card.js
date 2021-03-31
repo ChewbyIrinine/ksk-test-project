@@ -13,7 +13,7 @@ const Card = ({
 	return (
 		<div className="card-item">
 			<div className="card__heading">
-				<h2 className="card__title">Card 1</h2>
+				<h2 className="card__title">Card {invoiceNumber}</h2>
 			</div>
 			<div className="card__content">
 				<label className="card__id">

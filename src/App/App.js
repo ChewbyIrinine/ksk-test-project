@@ -14,7 +14,7 @@ export default class App extends React.Component {
 			{
 				id: 1,
 				creationDate: "2021-03-12",
-				invoiceNumber: 1,
+				invoiceNumber: 10,
 				arrivalTimeFrom: "2021-03-30",
 				arrivalTimeBy: "2021-03-31",
 				type: "RUED",
@@ -22,7 +22,7 @@ export default class App extends React.Component {
 			{
 				id: 2,
 				creationDate: "2020-12-07",
-				invoiceNumber: 1,
+				invoiceNumber: 11,
 				arrivalTimeFrom: "2020-03-05",
 				arrivalTimeBy: "2020-03-10",
 				type: "RUEX",
@@ -30,7 +30,7 @@ export default class App extends React.Component {
 			{
 				id: 3,
 				creationDate: "2020-10-02",
-				invoiceNumber: 1,
+				invoiceNumber: 12,
 				arrivalTimeFrom: "2021-01-03",
 				arrivalTimeBy: "2021-01-07",
 				type: "RUSG",
@@ -38,7 +38,7 @@ export default class App extends React.Component {
 			{
 				id: 4,
 				creationDate: "2021-01-13",
-				invoiceNumber: 1,
+				invoiceNumber: 13,
 				arrivalTimeFrom: "2021-05-31",
 				arrivalTimeBy: "2021-06-03",
 				type: "RUED",
@@ -46,45 +46,82 @@ export default class App extends React.Component {
 			{
 				id: 5,
 				creationDate: "2021-02-05",
-				invoiceNumber: 1,
+				invoiceNumber: 14,
 				arrivalTimeFrom: "2021-04-11",
 				arrivalTimeBy: "2021-04-12",
 				type: "RUEX",
 			},
 		],
 
+		filterId: "",
+		filterInvoiceNumber: "",
 		filterArrivalFrom: "",
 		filterArrivalBy: "",
+		filterType: "",
 	};
 
-	filter(items, filterArrivalFrom, filterArrivalBy) {
+	filter(
+		items,
+		filterId,
+		filterInvoiceNumber,
+		filterArrivalFrom,
+		filterArrivalBy
+	) {
 		let filteredArr = items;
-		console.log(filteredArr);
+		if (filterId !== "") {
+			filteredArr = filteredArr.filter(
+				(item) => item.id === Number(filterId)
+			);
+		}
+		if (filterInvoiceNumber !== "") {
+			filteredArr = filteredArr.filter(
+				(item) => item.invoiceNumber === Number(filterInvoiceNumber)
+			);
+		}
 		if (filterArrivalFrom !== "") {
 			filteredArr = filteredArr.filter(
 				(item) => item.arrivalTimeFrom >= filterArrivalFrom
 			);
 		}
-		console.log(filteredArr);
 		if (filterArrivalBy !== "") {
 			filteredArr = filteredArr.filter(
 				(item) => item.arrivalTimeBy <= filterArrivalBy
 			);
 		}
 		console.log(filteredArr);
+		console.log("This is default arr", items);
 		return filteredArr;
 	}
 
-	onFilterChange = (filterArrivalFrom, filterArrivalBy) => {
-		this.setState({ filterArrivalFrom, filterArrivalBy });
+	onFilterChange = (
+		filterId,
+		filterInvoiceNumber,
+		filterArrivalFrom,
+		filterArrivalBy
+	) => {
+		this.setState({
+			filterId,
+			filterInvoiceNumber,
+			filterArrivalFrom,
+			filterArrivalBy,
+		});
 		console.log("Изменение фильтра");
 	};
 
 	render() {
-		const { items, filterArrivalFrom, filterArrivalBy } = this.state;
+		const {
+			items,
+			filterId,
+			filterInvoiceNumber,
+			filterArrivalFrom,
+			filterArrivalBy,
+			filterType,
+		} = this.state;
 
 		const visibleItems = this.filter(
 			items,
+			filterId,
+			filterInvoiceNumber,
 			filterArrivalFrom,
 			filterArrivalBy
 		);
@@ -114,8 +151,11 @@ export default class App extends React.Component {
 							ДОБАВИТЬ
 						</button>
 						<Filters
+							filterId={filterId}
+							filterInvoiceNumber={filterInvoiceNumber}
 							filterArrivalFrom={filterArrivalFrom}
 							filterArrivalBy={filterArrivalBy}
+							filterType={filterType}
 							onFilterChange={this.onFilterChange}
 						/>
 						<Sorting />
