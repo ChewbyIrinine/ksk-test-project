@@ -9,6 +9,7 @@ export default class Filters extends React.Component {
 			filterInvoiceNumber,
 			filterArrivalFrom,
 			filterArrivalBy,
+			filterType,
 			onFilterChange,
 		} = this.props;
 
@@ -33,7 +34,8 @@ export default class Filters extends React.Component {
 								event.target.value,
 								filterInvoiceNumber,
 								filterArrivalFrom,
-								filterArrivalBy
+								filterArrivalBy,
+								filterType
 							)
 						}
 					></input>
@@ -50,7 +52,8 @@ export default class Filters extends React.Component {
 								filterId,
 								event.target.value,
 								filterArrivalFrom,
-								filterArrivalBy
+								filterArrivalBy,
+								filterType
 							)
 						}
 					></input>
@@ -70,7 +73,8 @@ export default class Filters extends React.Component {
 									filterId,
 									filterInvoiceNumber,
 									event.target.value,
-									filterArrivalBy
+									filterArrivalBy,
+									filterType
 								)
 							}
 						></input>
@@ -86,7 +90,8 @@ export default class Filters extends React.Component {
 									filterId,
 									filterInvoiceNumber,
 									filterArrivalFrom,
-									event.target.value
+									event.target.value,
+									filterType
 								)
 							}
 						></input>
@@ -94,10 +99,29 @@ export default class Filters extends React.Component {
 					<label className="filters-text filters__content-label">
 						Order type
 					</label>
-					<select className="form-select filters__select">
-						<option>RUED</option>
-						<option>RUEX</option>
-						<option>RUSG</option>
+					<select
+						className="form-select filters__select"
+						value={filterType}
+						onChange={(event) =>
+							onFilterChange(
+								filterId,
+								filterInvoiceNumber,
+								filterArrivalFrom,
+								filterArrivalBy,
+								event.target.value
+							)
+						}
+					>
+						<option
+							disabled
+							value="default"
+							style={{ display: "none" }}
+						>
+							RUED
+						</option>
+						<option value="RUED">RUED</option>
+						<option value="RUEX">RUEX</option>
+						<option value="RUSG">RUSG</option>
 					</select>
 				</div>
 			</div>

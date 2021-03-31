@@ -57,7 +57,7 @@ export default class App extends React.Component {
 		filterInvoiceNumber: "",
 		filterArrivalFrom: "",
 		filterArrivalBy: "",
-		filterType: "",
+		filterType: "default",
 	};
 
 	filter(
@@ -65,7 +65,8 @@ export default class App extends React.Component {
 		filterId,
 		filterInvoiceNumber,
 		filterArrivalFrom,
-		filterArrivalBy
+		filterArrivalBy,
+		filterType
 	) {
 		let filteredArr = items;
 		if (filterId !== "") {
@@ -88,8 +89,11 @@ export default class App extends React.Component {
 				(item) => item.arrivalTimeBy <= filterArrivalBy
 			);
 		}
-		console.log(filteredArr);
-		console.log("This is default arr", items);
+		if (filterType !== "default") {
+			filteredArr = filteredArr.filter(
+				(item) => item.type === filterType
+			);
+		}
 		return filteredArr;
 	}
 
@@ -97,13 +101,15 @@ export default class App extends React.Component {
 		filterId,
 		filterInvoiceNumber,
 		filterArrivalFrom,
-		filterArrivalBy
+		filterArrivalBy,
+		filterType
 	) => {
 		this.setState({
 			filterId,
 			filterInvoiceNumber,
 			filterArrivalFrom,
 			filterArrivalBy,
+			filterType,
 		});
 		console.log("Изменение фильтра");
 	};
@@ -123,7 +129,8 @@ export default class App extends React.Component {
 			filterId,
 			filterInvoiceNumber,
 			filterArrivalFrom,
-			filterArrivalBy
+			filterArrivalBy,
+			filterType
 		);
 
 		return (
