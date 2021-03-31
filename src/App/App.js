@@ -10,12 +10,14 @@ import "./App.css";
 import Logo from "../img/content (2) 1.svg";
 
 export default class App extends React.Component {
+	maxId = 6;
+
 	state = {
 		items: [
 			{
 				id: 1,
-				creationDate: "2021-03-12",
-				invoiceNumber: 10,
+				creationDate: "2201-03-12",
+				invoiceNumber: 1,
 				arrivalTimeFrom: "2021-03-30",
 				arrivalTimeBy: "2021-03-31",
 				type: "RUED",
@@ -23,7 +25,7 @@ export default class App extends React.Component {
 			{
 				id: 2,
 				creationDate: "2020-12-07",
-				invoiceNumber: 11,
+				invoiceNumber: 2,
 				arrivalTimeFrom: "2020-03-05",
 				arrivalTimeBy: "2020-03-10",
 				type: "RUEX",
@@ -31,7 +33,7 @@ export default class App extends React.Component {
 			{
 				id: 3,
 				creationDate: "2020-10-02",
-				invoiceNumber: 12,
+				invoiceNumber: 3,
 				arrivalTimeFrom: "2021-01-03",
 				arrivalTimeBy: "2021-01-07",
 				type: "RUSG",
@@ -39,7 +41,7 @@ export default class App extends React.Component {
 			{
 				id: 4,
 				creationDate: "2021-01-13",
-				invoiceNumber: 13,
+				invoiceNumber: 4,
 				arrivalTimeFrom: "2021-05-31",
 				arrivalTimeBy: "2021-06-03",
 				type: "RUED",
@@ -47,7 +49,7 @@ export default class App extends React.Component {
 			{
 				id: 5,
 				creationDate: "2021-02-05",
-				invoiceNumber: 14,
+				invoiceNumber: 5,
 				arrivalTimeFrom: "2021-04-11",
 				arrivalTimeBy: "2021-04-12",
 				type: "RUEX",
@@ -114,7 +116,6 @@ export default class App extends React.Component {
 			filterArrivalBy,
 			filterType,
 		});
-		console.log("Изменение фильтра");
 	};
 
 	onModalOff = () => {
@@ -122,6 +123,52 @@ export default class App extends React.Component {
 			modalActive: false,
 		});
 	};
+
+	createNewItem(
+		creationDate,
+		invoiceNumber,
+		arrivalTimeFrom,
+		arrivalTimeBy,
+		type
+	) {
+		return {
+			id: this.maxId++,
+			creationDate,
+			invoiceNumber,
+			arrivalTimeFrom,
+			arrivalTimeBy,
+			type,
+		};
+	}
+
+	addItem = (invoiceNumber, type) => {
+		this.setState(({ items }) => {
+			const newArr = [
+				...items,
+				this.createNewItem(
+					this.dateFormat(),
+					document.querySelector(".add-form__input").value,
+					this.dateFormat(),
+					this.dateFormat(),
+					document.querySelector(".add-form__select").value
+				),
+			];
+			return {
+				items: newArr,
+			};
+		});
+	};
+
+	dateFormat() {
+		let mm = new Date().getMonth() + 1;
+		let dd = new Date().getDate();
+
+		return [
+			new Date().getFullYear(),
+			(mm > 9 ? "" : "0") + mm,
+			(dd > 9 ? "" : "0") + dd,
+		].join("-");
+	}
 
 	render() {
 		const {
@@ -144,10 +191,10 @@ export default class App extends React.Component {
 		);
 
 		document.onkeydown = (event) => {
-			if (event.key === "Enter") {
+			if (event.key === "Enter" && modalActive) {
 				this.onModalOff();
 				document.querySelector(".add-form__select").blur();
-				console.log("enter press here! ");
+				this.addItem();
 			}
 		};
 
@@ -188,6 +235,7 @@ export default class App extends React.Component {
 				<AddForm
 					modalActive={modalActive}
 					onModalOff={this.onModalOff}
+					addItem={this.addItem}
 				/>
 			</div>
 		);

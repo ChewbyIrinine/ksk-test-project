@@ -26,7 +26,7 @@ export default class Filters extends React.Component {
 					</label>
 					<input
 						className="form-control filters__input"
-						type="text"
+						type="number"
 						placeholder="Enter value"
 						value={filterId}
 						onChange={(event) =>
